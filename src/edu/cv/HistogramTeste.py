@@ -93,11 +93,11 @@ def aplicaMascaraDetectaBorda( surface, x1, y1, x2, y2 ):
             gV = aplicaMascaraNoPixel( surface, x, y, mascaraV )
             gH = aplicaMascaraNoPixel( surface, x, y, mascaraH )
             gMagnitude = normalizaVetor( [gV, gH] )
-            gPhase = math.atan( gV / gH )
+#             gPhase = math.atan( gV / gH )
             if gMagnitude > 255 :
                 gMagnitude = 255
             newSurface.set_at( (x, y), (gMagnitude, gMagnitude, gMagnitude) )
-            magnitudeMatriz[y][x] = (gMagnitude, gPhase)
+#             magnitudeMatriz[y][x] = (gMagnitude, gPhase)
             displayBar(screen, "Aplicando Mascara de Sobel", c, total)
             c += 1
     return newSurface
@@ -134,8 +134,9 @@ def aplicaMascaraDetectaBorda( surface, x1, y1, x2, y2 ):
 # # 
 
 # imagemName = 'C:/Temp/Luneta30xa.jpg'
-imagemName = 'C:/Temp/Barcode/images/IMG112.jpg'
+# imagemName = 'C:/Temp/Barcode/images/IMG112.jpg'
 # imagemName = 'C:/Temp/shutterstock_28649449.jpg'
+imagemName = 'C:/Users/Public/Pictures/Sample Pictures/Koala.jpg'
 imagem = pygame.image.load(imagemName).convert_alpha()
 imagemProportion = (imagem.get_width() / imagem.get_height())
 if (imagem.get_width() > dimensions[0]):
